@@ -2,16 +2,13 @@
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
-
-
 
 <!-- PROJECT LOGO -->
-<br />
+<!-- <br />
 <p align="center">
   <a href="https://github.com/othneildrew/Best-README-Template">
     <img src="images/logo.png" alt="Logo" width="80" height="80">
-  </a>
+  </a> -->
 
 <!-- TABLE OF CONTENTS -->
 <details open="open">
@@ -33,7 +30,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+<!-- [![Product Name Screen Shot][product-screenshot]](https://example.com) -->
 
 Project ini merupakan tugas yang dibuat saat mata kuliah Hardware-Software Codesign kelompok A4.
 
@@ -47,8 +44,6 @@ Of course, no one template will serve all projects since your needs may be diffe
 A list of commonly used resources that I find helpful are listed in the acknowledgements. -->
 
 ### Built With
-
-This section should list any major frameworks that you built your project using. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
 * [Flutter](https://flutter.dev)
 <!-- * [JQuery](https://jquery.com)
 * [Laravel](https://laravel.com) -->
@@ -56,7 +51,7 @@ This section should list any major frameworks that you built your project using.
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Dibuat untuk mendeteksi kecepatan aliran air menggunakan kamera handphone.
+Dibuat untuk mendeteksi kecepatan aliran air sungai menggunakan kamera handphone.
 
 <!-- _For more examples, please refer to the [Documentation](https://example.com)_ -->
 
