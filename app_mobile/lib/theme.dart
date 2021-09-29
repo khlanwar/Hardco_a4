@@ -1,42 +1,35 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-Color firstColor = Color(0xff3F72AF);
-Color secoundColor = Color(0xffDBE2EF);
-Color textColorBlack = Color(0xff000000);
-Color textColorWhite = Color(0xffFFFFFF);
-
-TextStyle appbarTextStyle = GoogleFonts.poppins(
-  color: textColorWhite,
-  fontSize: 20,
-);
+Color whiteColor = Color(0xffFFFFFF);
+Color blueColor = Color(0xff8997B8);
 
 TextStyle titleTextStyle = GoogleFonts.poppins(
-  color: textColorBlack,
+  color: whiteColor,
   fontWeight: FontWeight.bold,
-  fontSize: 22,
+  fontSize: 26,
 );
 
 TextStyle subTitleTextStyle = GoogleFonts.poppins(
-  color: textColorBlack,
-  fontWeight: FontWeight.w400,
+  color: whiteColor,
+  fontWeight: FontWeight.w300,
   fontSize: 16,
 );
 
 TextStyle planTextStyle = GoogleFonts.poppins(
-  color: textColorBlack,
+  color: whiteColor,
   fontWeight: FontWeight.w500,
   fontSize: 14,
 );
 
 TextStyle descTextStyle = GoogleFonts.poppins(
-  color: textColorBlack,
+  color: whiteColor,
   fontWeight: FontWeight.w300,
   fontSize: 12,
 );
 
 TextStyle buttonTextStyle = GoogleFonts.poppins(
-  color: textColorWhite,
+  color: whiteColor,
   fontWeight: FontWeight.w500,
   fontSize: 16,
 );
