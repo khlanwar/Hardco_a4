@@ -64,12 +64,12 @@ Project Link: [https://github.com/khlanwar/Hardco_a4](https://github.com/khlanwa
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
+[contributors-shield]: https://img.shields.io/github/contributors/khlanwar/Hardco_a4.svg?style=for-the-badge
 [contributors-url]: https://github.com/khlanwar/Hardco_a4/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=for-the-badge
+[forks-shield]: https://img.shields.io/github/forks/khlanwar/Hardco_a4?style=for-the-badge
 [forks-url]: https://github.com/khlanwar/Hardco_a4/network/members
-[stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=for-the-badge
+[stars-shield]: https://img.shields.io/github/stars/khlanwar/Hardco_a4.svg?style=for-the-badge
 [stars-url]: https://github.com/khlanwar/Hardco_a4/stargazers
-[issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge
+[issues-shield]: https://img.shields.io/github/issues/khlanwar/Hardco_a4.svg?style=for-the-badge
 [issues-url]: https://github.com/khlanwar/Hardco_a4/issues
 [product-screenshot]: images/screenshot.png
