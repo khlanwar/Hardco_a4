@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'theme.dart';
 
 class VideoScreen extends StatefulWidget {
   @override
@@ -8,11 +7,23 @@ class VideoScreen extends StatefulWidget {
 }
 
 class _MyAppState extends State<VideoScreen> {
+  int angka = 0;
+
+  void tekanTombolTambah() {
+    setState(() {
+      angka = angka + 1;
+    });
+  }
+
+  void tekanTombolKurang() {
+    setState(() {
+      angka = angka - 1;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(primaryColor: firstColor),
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
@@ -22,51 +33,21 @@ class _MyAppState extends State<VideoScreen> {
               onPressed: () => Navigator.pop(context)),
         ),
         body: Center(
-          child: ListView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Column(children: [
-                SizedBox(
-                  height: 50.0,
-                ),
-                CupertinoButton(
-                  color: firstColor,
-                  child: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: <Widget>[
-                      Text('Video',style: buttonTextStyle),
-                      SizedBox(width: 8.0),
-                      Icon(Icons.video_library),
-                    ],
-                  ),
-                  onPressed: () {},
-                ),
-                SizedBox(height: 16.0),
-                CupertinoButton(
-                  color: firstColor,
-                  child: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: <Widget>[
-                      Text('Record',style: buttonTextStyle),
-                      SizedBox(width: 8.0),
-                      Icon(Icons.videocam),
-                    ],
-                  ),
-                  onPressed: () {},
-                ),
-                SizedBox(height: 320.0),
-                CupertinoButton(
-                  color: firstColor,
-                  child: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: <Widget>[
-                      Text('Send Video',style: buttonTextStyle),
-                      SizedBox(width: 8.0),
-                      Icon(Icons.send),
-                    ],
-                  ),
-                  onPressed: () {},
-                ),
-              ],)
+              Text(
+                angka.toString(),
+                style: TextStyle(fontSize: 40 + angka.toDouble()),
+              ),
+              CupertinoButton.filled(
+                  child: Text("Naikkan Bilangan"),
+                  padding: EdgeInsets.all(10),
+                  onPressed: tekanTombolTambah),
+              CupertinoButton.filled(
+                  child: Text("Turunkan Bilangan"),
+                  padding: EdgeInsets.all(10),
+                  onPressed: tekanTombolKurang),
             ],
           ),
         ),
