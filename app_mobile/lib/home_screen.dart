@@ -16,7 +16,7 @@ class HomeScreen extends StatelessWidget {
           child: Column(children: <Widget>[
         Center(child: Image.asset('assets/camera_undraw.png')),
         Padding(
-          padding: const EdgeInsets.only(top: 16.0, bottom: 8.0),
+          padding: const EdgeInsets.only(top: 8.0, bottom: 32.0),
           child: Text(
             'Selamat Datang',
             style: titleTextStyle,
@@ -25,24 +25,31 @@ class HomeScreen extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.only(bottom: 16.0),
           child: CupertinoButton(
-            color: thirdThemeColor,
-            child: Text('Cara Penggunaan', style: subTitleTextStyle),
-            onPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) {
-                return VideoScreen();
-              }));
-            },
+            color: firstColor,
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+                Text('Guide',style: buttonTextStyle),
+                SizedBox(width: 4.0),
+              ],
+            ),
+            onPressed: () {},
           ),
         ),
-        CupertinoButton(
-          color: thirdThemeColor,
-          child: Text('Masuk Tampilan Rekam', style: subTitleTextStyle),
-          onPressed: () {
-            Navigator.push(context, MaterialPageRoute(builder: (context) {
-              return VideoScreen();
-            }));
-          },
-        ),
+            CupertinoButton(
+              color: firstColor,
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: <Widget>[
+                  Text('Start',style: buttonTextStyle),
+                ],
+              ),
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return VideoScreen();
+                }));
+              },
+            ),
       ])),
     );
   }

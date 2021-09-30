@@ -1,5 +1,10 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:video_player/video_player.dart';
 import 'package:flutter/cupertino.dart';
+import 'theme.dart';
+import 'package:chewie/chewie.dart';
 
 class VideoScreen extends StatefulWidget {
   @override
@@ -7,51 +12,105 @@ class VideoScreen extends StatefulWidget {
 }
 
 class _MyAppState extends State<VideoScreen> {
-  int angka = 0;
 
-  void tekanTombolTambah() {
-    setState(() {
-      angka = angka + 1;
-    });
+  File videoFile;
+
+  _videoPic()async{
+    File theVideo = await ImagePicker.pickVideo(
+        source: ImageSource.gallery);
+    if(theVideo != null){
+      setState(() {
+        videoFile = theVideo;
+      });
+    }
   }
 
-  void tekanTombolKurang() {
-    setState(() {
-      angka = angka - 1;
-    });
+  _record()async{
+    File theVideo = await ImagePicker.pickVideo(
+        source: ImageSource.camera);
+    if(theVideo != null){
+      setState(() {
+        videoFile = theVideo;
+      });
+    }
   }
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
+    return Scaffold(
         appBar: AppBar(
-          automaticallyImplyLeading: true,
-          leading: IconButton(
-              icon: Icon(Icons.arrow_back_ios),
-              onPressed: () => Navigator.pop(context)),
+          title: Text('Detail Screen'),
         ),
         body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+          child: ListView(
             children: <Widget>[
-              Text(
-                angka.toString(),
-                style: TextStyle(fontSize: 40 + angka.toDouble()),
-              ),
-              CupertinoButton.filled(
-                  child: Text("Naikkan Bilangan"),
-                  padding: EdgeInsets.all(10),
-                  onPressed: tekanTombolTambah),
-              CupertinoButton.filled(
-                  child: Text("Turunkan Bilangan"),
-                  padding: EdgeInsets.all(10),
-                  onPressed: tekanTombolKurang),
+              Column(children: [
+                SizedBox(
+                  height: 16.0,
+                ),
+                Container(
+                  color: Colors.black,
+                  height: MediaQuery.of(context).size.height*(30/100),
+                  width: MediaQuery.of(context).size.width*(100/100),
+                  child: videoFile == null?Center(
+                    child: Icon(Icons.videocam,color: Colors.red,size: 50.0,),
+                  ):FittedBox(
+                  fit: BoxFit.contain,
+                    child: mounted?Chewie(
+                      controller: ChewieController(
+                        videoPlayerController: VideoPlayerController.file(videoFile),
+                        aspectRatio: 3/2,
+                        autoPlay: true,
+                        looping: true,
+                      ),
+                    ):Container(),
+                  ),
+                ),
+                SizedBox(
+                  height: 16.0,
+                ),
+                CupertinoButton(
+                  color: firstColor,
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: <Widget>[
+                      Text('Video',style: buttonTextStyle),
+                      SizedBox(width: 8.0),
+                      Icon(Icons.video_library),
+                    ],
+                  ),
+                  onPressed: () {_videoPic();},
+                ),
+                SizedBox(height: 16.0),
+                CupertinoButton(
+                  color: firstColor,
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: <Widget>[
+                      Text('Record',style: buttonTextStyle),
+                      SizedBox(width: 8.0),
+                      Icon(Icons.videocam),
+                    ],
+                  ),
+                  onPressed: () {_record();},
+                ),
+                SizedBox(height: 160.0),
+                CupertinoButton(
+                  color: firstColor,
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: <Widget>[
+                      Text('Send Video',style: buttonTextStyle),
+                      SizedBox(width: 8.0),
+                      Icon(Icons.send),
+                    ],
+                  ),
+                  onPressed: () {},
+                ),
+              ],)
             ],
           ),
         ),
-      ),
     );
   }
 }
