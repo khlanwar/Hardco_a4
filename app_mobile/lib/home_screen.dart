@@ -1,4 +1,5 @@
 import 'package:app_mobile/video_screen.dart';
+import 'package:app_mobile/guide_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'theme.dart';
@@ -9,7 +10,7 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
           title: Text(
-        'Deteksi Kecepatan Aliran Air Sungai',
+        'Deteksi Kecepatan Air Sungai',
         style: appbarTextStyle,
       )),
       body: Center(
@@ -23,33 +24,37 @@ class HomeScreen extends StatelessWidget {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.only(bottom: 16.0),
+          padding: const EdgeInsets.only(bottom: 24.0),
           child: CupertinoButton(
             color: firstColor,
             child: Row(
               mainAxisSize: MainAxisSize.min,
               children: <Widget>[
-                Text('Guide',style: buttonTextStyle),
+                Text('Panduan', style: buttonTextStyle),
                 SizedBox(width: 4.0),
               ],
             ),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return GuideScreen();
+              }));
+            },
           ),
         ),
-            CupertinoButton(
-              color: firstColor,
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: <Widget>[
-                  Text('Start',style: buttonTextStyle),
-                ],
-              ),
-              onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return VideoScreen();
-                }));
-              },
-            ),
+        CupertinoButton(
+          color: firstColor,
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              Text('Mulai Deteksi', style: buttonTextStyle),
+            ],
+          ),
+          onPressed: () {
+            Navigator.push(context, MaterialPageRoute(builder: (context) {
+              return VideoScreen();
+            }));
+          },
+        ),
       ])),
     );
   }
