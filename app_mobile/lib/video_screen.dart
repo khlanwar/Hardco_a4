@@ -39,7 +39,7 @@ class _MyAppState extends State<VideoScreen> {
     setState(() {
       nilai = "Tunggu, Kecepatan air sedang dideteksi...";
     });
-    var uri = Uri.parse("http://10.0.2.2:5000/");
+    var uri = Uri.parse("https://object-speed.herokuapp.com/");
     var request = new http.MultipartRequest("POST", uri);
     String ret = '';
     var multipartFile =
